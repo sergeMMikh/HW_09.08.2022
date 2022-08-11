@@ -15,7 +15,7 @@ class Command(BaseCommand):
             phones = list(csv.DictReader(file, delimiter=';'))
 
         for phone in phones:
-            ph = Phone.object.create(id=phone.get('id'),
+            ph = Phone.objects.create(id=phone.get('id'),
                                      name=phone.get('name'),
                                      price=phone.get('price'),
                                      image=phone.get('image'),
