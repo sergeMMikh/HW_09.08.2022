@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from phones.models import Phone
+from pprint import pprint
 
 def index(request):
     return redirect('catalog')
@@ -14,5 +15,6 @@ def show_catalog(request):
 
 def show_product(request, slug):
     template = 'product.html'
-    context = {}
+    phones = Phone.objects.filter(slug=slug)
+    context = {'phone': phones}
     return render(request, template, context)

@@ -16,9 +16,9 @@ class Command(BaseCommand):
 
         for phone in phones:
             ph = Phone.objects.create(id=phone.get('id'),
-                                     name=phone.get('name'),
-                                     price=phone.get('price'),
-                                     image=phone.get('image'),
-                                     release_date=phone.get('release_date'),
-                                     lte_exists=phone.get('lte_exists'),
-                                     slug=slugify(phone.get('name')))
+                                      name=phone.get('name'),
+                                      price=phone.get('price'),
+                                      image=phone.get('image'),
+                                      release_date=phone.get('release_date'),
+                                      lte_exists=phone.get('lte_exists'),
+                                      slug=slugify(phone.get('name')))
